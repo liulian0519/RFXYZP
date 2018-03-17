@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--.从第一个元素开始，该元素可以认为已经被排序；
+		.取出下一个元素，在已经排序的元素序列中从后向前扫描；
+		.如果该元素（已排序）大于新元素，将该元素移到下一位置；
+		.重复步骤3，直到找到已排序的元素小于或者等于新元素的位置；
+		.将新元素插入到该位置后；
+		.重复步骤2~5。-->
+		<meta charset="UTF-8">
+		<title>插入排序</title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+//			<!--直接插入-->
+			function insertSort(arr){
+				var len = arr.length;
+				var preIndex,current;
+				console.time('直接插入排序耗时：');
+				for(var i =1;i<len;i++){
+					preIndex = i-1;
+					current = arr[i];
+					while(preIndex>=0 && arr[preIndex]>current){
+						arr[preIndex+1] = arr[preIndex];
+						preIndex--;
+					}
+					arr[preIndex+1] = current;
+				}
+				console.timeEnd('直接插入排序耗时：')
+				return arr;
+			}
+			var arr=[3,44,38,5,47,15,36,26,27,2,46,4,19,50,48];
+			console.log(insertSort(arr));
+//			直接插入结束
+//			二分插入开始
+			function BinSort(arr){
+				var len = arr.length;
+				console.time('二分插入排序耗时：');
+				for(var i = 1;i<len;i++){
+					var current = arr[i];
+					var low = 0;
+					var high = i-1;
+					while(low<=high){
+						var mid =parseInt((low+high)/2) ;
+						if(current<arr[mid]) high = mid-1;
+						else low = mid+ 1;
+					}
+					for(var j=i-1;j>=low;j--) arr[j+1] = arr[j];
+					arr[low] = current;
+				}
+				console.timeEnd('二分插入排序耗时：')
+				return arr;
+			}
+			var arr=[3,44,38,5,47,15,36,26,27,2,46,4,19,50,48];
+			console.log(BinSort(arr));
+			//二分插入结束
+		</script>
+	</body>
+</html>
