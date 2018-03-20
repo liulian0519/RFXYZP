@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>cvte面试</title>
+		<style type="text/css">
+			.contain{
+				position: absolute;
+				top: 50%;
+				left:50%;
+				-webkit-transform: translate(-50%, -50%);  
+  				transform: translate(-50%, -50%);
+				
+			}
+			.contain input{
+				border: 1px solid #B8860B;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="contain">
+			<div class="wrap">
+				<div class="hea">
+					<label>手机号：</label>
+					<input type="text" />
+				</div>
+				<div class="mid">
+					<input type="text" />
+					<input type="button" id="btn" value="获取验证码" onclick="SetTime(this)" /> 
+				</div>
+				<div class="foot">
+					<button>提交</button>
+				</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript"> 
+			var time = 10;
+			function SetTime(obj){
+				if(time==0){
+					obj.removeAttribute("disabled");
+					obj.value = "获取验证码"
+//					obj.innerHTML("获取验证码");
+					time = 60;
+					return
+				}else{
+					obj.setAttribute('disabled',true);
+					obj.value="重新发送（"+time+"）";
+					time--;
+				}
+				setTimeout(function(){
+					SetTime(obj);
+				},1000)
+			}
+  
+		</script>
+	</body>
+</html>
