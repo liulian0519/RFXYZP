@@ -6,13 +6,14 @@
 	</head>
 	<body>
 		<!--方法一-->
-		<!--<script type="text/javascript" >
+		<script type="text/javascript" >
 			function quickSort(arr){
 				if(arr.length<=1){
 					return arr;
 				}
 				var middle = Math.floor(arr.length/2);
 				var poit = arr.splice(middle,1)[0];
+//				console.log(poit)
 				var left = []; var right = [];
 				for(var i =0;i<arr.length;i++){
 					if(arr[i]<poit){
@@ -24,13 +25,13 @@
 				return quickSort(left).concat([poit],quickSort(right))
 		
 			}
-			var arr = [7,5,8,6,1,4,0];
+			var arr = [7,5,8,6,1,4,0,9,3,44];
 			
 			console.log(quickSort(arr));
 			
-		</script>-->
+		</script>
 		<!--方法二-->
-		<script type="text/javascript">
+		<!--<script type="text/javascript">
 			var quickSort1 = function(array){
 				if(array!==[]){
 					quick(array,0,array.length-1);
@@ -80,7 +81,7 @@
 			}
 			var arr = [7,5,8,6,1,4,0];
 			
-			console.log(quickSort1(arr));
+			console.log(quickSort1(arr));-->
 		</script>
 		
 	</body>
