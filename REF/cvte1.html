@@ -22,14 +22,14 @@
 			<div class="wrap">
 				<div class="hea">
 					<label>手机号：</label>
-					<input type="text" />
+					<input type="text" id="phone" />
 				</div>
 				<div class="mid">
 					<input type="text" />
 					<input type="button" id="btn" value="获取验证码" onclick="SetTime(this)" /> 
 				</div>
 				<div class="foot">
-					<button>提交</button>
+					<button onclick="test()">提交</button>
 				</div>
 			</div>
 		</div>
@@ -52,7 +52,19 @@
 					SetTime(obj);
 				},1000)
 			}
-  
+			function test(){
+				var str = document.getElementById('phone').value;
+				console.log(str);
+				var bt = document.getElementById('btn');
+				var reg = /^1[3|4|5|8][0-9]\d{4,8}$/;
+				console.log(reg.test(str)) ;
+				if(reg.test(str) && bt!=null){
+					alert("提交成功");
+				}else{
+					alert("提交失败");
+				}
+			}
 		</script>
 	</body>
 </html>
+ 
