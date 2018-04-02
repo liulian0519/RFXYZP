@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*去哪儿春招笔试*/
+		function pay()
+			{
+   				 var month = 16000;
+   				 var fiv = month*0.2;
+   				 var rate = month - fiv -3500 ;
+   				 if(rate<=1500){
+                     
+                     var last1 = month- (Math.round(rate*0.03-0)+fiv)
+   				 	console.log(last)
+                 }
+   				 else if(rate<=4500){
+                     var last2 = month-(Math.round(rate*0.1-105)+fiv)
+   				 	console.log(last2);
+                 }
+   				 else if(rate<=9000){
+                     var last3 = month-(Math.round(rate*0.2-555)+fiv)
+   				 	console.log(last3);
+                 }
+   				 else if(rate<=35000){
+                     var last4 = month-(Math.round(rate*0.25-1005)+fiv)
+   				 	console.log(last4);
+                 }
+   				 else if(rate<=55000){
+                    var last5= month-(Math.round(rate*0.3-2755)+fiv)
+   				 	console.log(last5);
+                 }
+   				 else if(rate<=80000){
+                     var last6= month-(Math.round(rate*0.35-5505)+fiv)
+   				 	console.log(last6);
+                 }
+   				 else{
+                  var last7=   month-(Math.round(rate*0.45-13505)+fiv)
+   				 	console.log(last7);
+                 }
+// 				 printsth(month);
+    
+			}
+pay();
+
+		</script>
+	</body>
+</html>
