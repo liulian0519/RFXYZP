@@ -1,0 +1,51 @@
+<!--/*
+小东和其他小朋友正在玩一个关于选举的游戏。选举是通过投票的方式进行的，得票最多的人将获胜。
+小东是编号为1的候选者，此外还有其他的候选者参加选举。根据初步的调查情况
+所有准备投票的小朋友都有一定的投票倾向性，小东如果要获得胜利，必须争取部分准备为其他候选人投票的小朋友
+由于小东的资源较为有限，她希望用最小的代价赢得胜利，请你帮忙计算她最少需要争取的选票数。
+输入；										输出：
+	5											4
+	5 1 11 2 8									6
+	4											0
+	1 8 8 8
+	2 7 6
+
+
+     * 
+     */*/-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		var n =4;
+		arr=[1,8,8,8];
+		function xu(n,arr){
+			var dong = arr[0];
+			var index = 0;
+			var count=0;
+			while(n>1){
+				arr = arr.sort(sortN); //排序
+				index = arr.indexOf(dong); //晓东的下标
+				if(n-index===1){ //排序后排在最高位
+					break;
+				}
+				dong++; //晓东票数加1
+				count++; //争取次数加1
+				arr[index] = dong; //更新晓东在数组中的值
+				arr[n-1]--; //最多的票数-1
+			}
+			console.log(count);
+	
+		}
+		function sortN(a,b){
+			return a-b;
+		}
+		xu(n,arr);
+
+		</script>
+	</body>
+</html>
