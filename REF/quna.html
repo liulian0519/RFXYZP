@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>去哪儿</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+//		(function(arr){
+//			var i; length  = arr.length;
+//			for(i=0;i<length;i++){
+//				console.log(arr[i]);
+//			}
+//		}([1,2,3,4]));
+//		console.log('----------------');
+//		var arr =[1,2,3,4]
+//		
+////			setTimeout(function(){
+////			for(var i=0;i<arr.length;i++){
+////				console.log(arr[i]);
+////			}
+////				},1000);
+//for(var i=0;i<arr.length;i++){
+//	setTimeout(function(){
+//		console.log(arr[i]);
+//	},1000)
+//}
+(function(arr){
+    var i=0; length=arr.length;
+    (function a(){
+        setTimeout(function(){
+            if(i<length)
+            console.log(arr[i++]);
+            a();
+        },1000);
+    }())
+}([9,6,4,7,'r','t']));
+
+		
+		</script>
+	</body>
+</html>
